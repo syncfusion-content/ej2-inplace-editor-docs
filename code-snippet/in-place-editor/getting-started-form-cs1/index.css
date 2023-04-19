@@ -1,0 +1,32 @@
+#container {
+    visibility: hidden;
+}
+
+#container .control-group {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#container .control-group table {
+    width: 400px;
+    margin: auto;
+}
+
+#container .control-group table td {
+    height: 70px;
+    width: 150px;
+}
+
+#container .control-group table .left {
+    text-align: left;
+}
+
+
+#loader {
+    color: #008cff;
+    height: 40px;
+    left: 45%;
+    position: absolute;
+    top: 45%;
+    width: 30%;
+}
