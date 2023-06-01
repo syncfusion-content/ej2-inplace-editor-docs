@@ -106,7 +106,7 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
 
 `[src/index.html]`
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 
