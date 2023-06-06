@@ -118,7 +118,7 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and model
 
 `[index.html]`
 
-```ts
+```html
 
 <!DOCTYPE html>
 <html lang="en">
@@ -193,7 +193,7 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and [`mod
 
 `[index.html]`
 
-```ts
+```html
 
 <!DOCTYPE html>
 <html lang="en">
