@@ -95,7 +95,7 @@ Formatting is a way of representing the value in different format. You can forma
 * [DateTimePicker](../api/datetimepicker/#format)
 * [NumericTextBox](../numerictextbox/formats/#custom-formats)
 * [Slider](../range-slider/format/)
-* [TimePicker](../api/timepicker#format)
+* [TimePicker](../api/timepicker/#format)
 
 {% if page.publishingplatform == "typescript" %}
 
