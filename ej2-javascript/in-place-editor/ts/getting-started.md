@@ -35,15 +35,23 @@ The following is the list of dependencies required to use the In-place Editor co
 
 Open the command prompt from the required directory, and run the following command to clone the Syncfusion JavaScript (Essential JS 2) quickstart project from [GitHub](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-).
 
-```
-    git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
-```
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
 
 After cloning the application in the `ej2-quickstart` folder, run the following command line to navigate to the `ej2-quickstart` folder.
 
-```
-    cd ej2-quickstart
-```
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+cd ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Add Syncfusion JavaScript packages
 
@@ -51,9 +59,13 @@ Syncfusion JavaScript (Essential JS 2) packages are available on the [npmjs.com]
 
 The quickstart application is preconfigured with the dependent [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package in the `~/package.json` file. Use the following command to install the dependent npm packages from the command prompt.
 
-```
-    npm install
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
+npm install
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Import the Syncfusion CSS styles
 
@@ -61,9 +73,13 @@ Syncfusion JavaScript controls come with [built-in themes](https://ej2.syncfusio
 
 The quickstart application is preconfigured to use the `Material` theme in the `~/src/styles/styles.css` file, as shown below: 
 
-```
-  @import "../../node_modules/@syncfusion/ej2/material.css";
-```
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
+
+@import "../../node_modules/@syncfusion/ej2/material.css";
+
+{% endhighlight %}
+{% endtabs %}
 
 > You can check out the [themes](https://ej2.syncfusion.com/documentation/appearance/theme/) section to know more about built-in themes and CSS reference for individual controls.
 
@@ -75,7 +91,9 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
 
 `[src/index.html]`
 
-```html
+{% tabs %}
+{% highlight html tabtitle="index.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -93,13 +111,16 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
     </div>
 </body>
 </html>
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 * Import the In-place Editor control to your `app.ts` file and initialize it to the `#element` as shown as follows.
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let editObj: InPlaceEditor = new InPlaceEditor({
@@ -111,7 +132,8 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 > In the above sample code, `#element` is the `id` of the HTML element in a page to which the In-place Editor is initialized.
 
@@ -123,7 +145,8 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and model
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let genderData = ['Male', 'Female']
@@ -137,7 +160,8 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Integrate DatePicker
 
@@ -147,7 +171,8 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and [`mod
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let editObj: InPlaceEditor = new InPlaceEditor({
@@ -159,15 +184,20 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Run the application
 
 * Run the application in the browser using the following command.
 
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
 npm start
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
