@@ -69,14 +69,32 @@ npm install
 
 ## Import the Syncfusion CSS styles
 
-Syncfusion JavaScript controls come with [built-in themes](https://ej2.syncfusion.com/documentation/appearance/theme/), which are available in the installed packages. It's easy to adapt the Syncfusion JavaScript controls to match the style of your application by referring to one of the built-in themes.
-
-The quickstart application is preconfigured to use the `Material` theme in the `~/src/styles/styles.css` file, as shown below: 
+In-place Editor CSS files are available in the ej2-inplace-editor and its sub-control package folder. This can be referenced in the `~/src/styles/styles.css` file of your application using the following code.
 
 {% tabs %}
 {% highlight css tabtitle="style.css" %}
 
-@import "../../node_modules/@syncfusion/ej2/material.css";
+@import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-dropdowns/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-calendars/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+@import '../../node_modules/@syncfusion/ej2-inplace-editor/styles/material.css';
+
+{% endhighlight %}
+{% endtabs %}
+
+* If you want to use the combined CSS files of entire controls, you can avail it from the root folder of Essential JS 2 package and reference it with the following code.
+
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
+
+@import '../../node_modules/@syncfusion/ej2/material.css';
 
 {% endhighlight %}
 {% endtabs %}
@@ -103,6 +121,8 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <meta name="description" content="Essential JS 2" />
     <meta name="author" content="Syncfusion" />
+    <link rel="shortcut icon" href="resources/favicon.ico" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <div style="margin: 50px;">
