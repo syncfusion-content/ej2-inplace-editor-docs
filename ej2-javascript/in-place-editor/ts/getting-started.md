@@ -99,8 +99,6 @@ In-place Editor CSS files are available in the ej2-inplace-editor and its sub-co
 {% endhighlight %}
 {% endtabs %}
 
-> You can check out the [themes](https://ej2.syncfusion.com/documentation/appearance/theme/) section to know more about built-in themes and CSS reference for individual controls.
-
 ## Add the In-place Editor with Textbox
 
 By default, the Essential JS 2 TextBox control is rendered in In-place Editor with the [`type`](../api/inplace-editor/inputType/) property sets as Text.
