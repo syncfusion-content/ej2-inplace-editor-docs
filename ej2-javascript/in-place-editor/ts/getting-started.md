@@ -11,7 +11,9 @@ domainurl: ##DomainURL##
 
 # Getting started in ##Platform_Name## In place editor control
 
-This section briefly explains about how to create a simple In-place Editor using TypeScript and configure its properties using the Essential JS 2 [quickstart](https://github.com/syncfusion/ej2-quickstart.git) seed repository.
+This section briefly explains about how to create a simple In-place Editor using TypeScript and configure its properties using the Essential JS 2 [quickstart](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-) seed repository.
+
+> This application is integrated with the `webpack.config.js` configuration and uses the latest version of the [webpack-cli](https://webpack.js.org/api/cli/#commands). It requires node `v14.15.0` or higher. For more information about webpack and its features, refer to the [webpack documentation](https://webpack.js.org/guides/getting-started/).
 
 ## Dependencies
 
@@ -29,56 +31,49 @@ The following is the list of dependencies required to use the In-place Editor co
     |-- @syncfusion/ej2-richtexteditor
 ```
 
-## Set up your development environment
+## Set up development environment
 
-* Clone the Essential JS 2 quickstart application project from [GitHub](https://github.com/syncfusion/ej2-quickstart) and install necessary npm packages using the following command.
+Open the command prompt from the required directory, and run the following command to clone the Syncfusion JavaScript (Essential JS 2) quickstart project from [GitHub](https://github.com/SyncfusionExamples/ej2-quickstart-webpack-).
 
-```
-git clone https://github.com/syncfusion/ej2-quickstart.git quickstart
-cd quickstart
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+git clone https://github.com/SyncfusionExamples/ej2-quickstart-webpack- ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
+
+After cloning the application in the `ej2-quickstart` folder, run the following command line to navigate to the `ej2-quickstart` folder.
+
+{% tabs %}
+{% highlight bash tabtitle="CMD" %}
+
+cd ej2-quickstart
+
+{% endhighlight %}
+{% endtabs %}
+
+## Add Syncfusion JavaScript packages
+
+Syncfusion JavaScript (Essential JS 2) packages are available on the [npmjs.com](https://www.npmjs.com/~syncfusionorg) public registry. You can install all Syncfusion JavaScript (Essential JS 2) controls in a single [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package or individual packages for each control.
+
+The quickstart application is preconfigured with the dependent [@syncfusion/ej2](https://www.npmjs.com/package/@syncfusion/ej2) package in the `~/package.json` file. Use the following command to install the dependent npm packages from the command prompt.
+
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
 npm install
-```
 
-> By default, the project is configured with all the Essential JS 2 dependencies. For better understanding, remove all the dependencies from `src/system.config.js` to get started with the In-place Editor control.
+{% endhighlight %}
+{% endtabs %}
 
-* Refer to the [In-place Editor control dependencies](./getting-started#dependencies) in `system.config.js` configuration file.
+## Import the Syncfusion CSS styles
 
-`[src/system.config.js]`
+In-place Editor CSS files are available in the ej2-inplace-editor and its sub-control package folder. This can be referenced in the `~/src/styles/styles.css` file of your application using the following code.
 
-```js
-System.config({
-    paths: {
-        'syncfusion:': './node_modules/@syncfusion/',
-    },
-    map: {
-        app: 'app',
-        //Syncfusion packages mapping
-        "@syncfusion/ej2-base": "syncfusion:ej2-base/dist/ej2-base.umd.min.js",
-        "@syncfusion/ej2-data": "syncfusion:ej2-data/dist/ej2-data.umd.min.js",
-        "@syncfusion/ej2-lists": "syncfusion:ej2-lists/dist/ej2-lists.umd.min.js",
-        "@syncfusion/ej2-inputs": "syncfusion:ej2-inputs/dist/ej2-inputs.umd.min.js",
-        "@syncfusion/ej2-popups": "syncfusion:ej2-popups/dist/ej2-popups.umd.min.js",
-        "@syncfusion/ej2-buttons": "syncfusion:ej2-buttons/dist/ej2-buttons.umd.min.js",
-        "@syncfusion/ej2-dropdowns": "syncfusion:ej2-dropdowns/dist/ej2-dropdowns.umd.min.js",
-        "@syncfusion/ej2-calendars": "syncfusion:ej2-calendars/dist/ej2-calendars.umd.min.js",
-        "@syncfusion/ej2-navigations": "syncfusion:ej2-navigations/dist/ej2-navigations.umd.min.js",
-        "@syncfusion/ej2-splitbuttons": "syncfusion:ej2-splitbuttons/dist/ej2-splitbuttons.umd.min.js",
-        "@syncfusion/ej2-richtexteditor": "syncfusion:ej2-richtexteditor/dist/ej2-richtexteditor.umd.min.js",
-        "@syncfusion/ej2-inplace-editor": "syncfusion:ej2-inplace-editor/dist/ej2-inplace-editor.umd.min.js"
-    },
-    packages: {
-        'app': { main: 'app', defaultExtension: 'js' }
-    }
-});
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
 
-System.import('app');
-```
-
-* In-place Editor CSS files are available in the `ej2-inplace-editor` and its sub-control package folder. This can be referenced in your application using the following code.
-
-`[src/styles/styles.css]`
-
-```
 @import '../../node_modules/@syncfusion/ej2-base/styles/material.css';
 @import '../../node_modules/@syncfusion/ej2-lists/styles/material.css';
 @import '../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
@@ -90,13 +85,19 @@ System.import('app');
 @import '../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
 @import '../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
 @import '../../node_modules/@syncfusion/ej2-inplace-editor/styles/material.css';
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 * If you want to use the combined CSS files of entire controls, you can avail it from the root folder of Essential JS 2 package and reference it with the following code.
 
-```
-@import '../../node_modules/ej2/material.css';
-```
+{% tabs %}
+{% highlight css tabtitle="style.css" %}
+
+@import '../../node_modules/@syncfusion/ej2/material.css';
+
+{% endhighlight %}
+{% endtabs %}
 
 ## Add the In-place Editor with Textbox
 
@@ -106,7 +107,9 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
 
 `[src/index.html]`
 
-```html
+{% tabs %}
+{% highlight html tabtitle="index.html" %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,11 +121,6 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
     <meta name="author" content="Syncfusion" />
     <link rel="shortcut icon" href="resources/favicon.ico" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
-    <!--style reference from app-->
-    <link href="/styles/styles.css" rel="stylesheet" />
-    <!--system js reference and configuration-->
-    <script src="node_modules/systemjs/dist/system.src.js" type="text/javascript"></script>
-    <script src="system.config.js" type="text/javascript"></script>
 </head>
 <body>
     <div style="margin: 50px;">
@@ -131,13 +129,16 @@ By default, the Essential JS 2 TextBox control is rendered in In-place Editor wi
     </div>
 </body>
 </html>
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 * Import the In-place Editor control to your `app.ts` file and initialize it to the `#element` as shown as follows.
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let editObj: InPlaceEditor = new InPlaceEditor({
@@ -149,7 +150,8 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 > In the above sample code, `#element` is the `id` of the HTML element in a page to which the In-place Editor is initialized.
 
@@ -161,7 +163,8 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and model
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let genderData = ['Male', 'Female']
@@ -175,7 +178,8 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Integrate DatePicker
 
@@ -185,7 +189,8 @@ In the following sample, [`type`](../api/inplace-editor/inputType/) and [`mod
 
 `[src/app/app.ts]`
 
-```ts
+{% tabs %}
+{% highlight ts tabtitle="app.ts" %}
 
 import { InPlaceEditor } from '@syncfusion/ej2-inplace-editor';
 let editObj: InPlaceEditor = new InPlaceEditor({
@@ -197,15 +202,20 @@ let editObj: InPlaceEditor = new InPlaceEditor({
 });
 editObj.appendTo('#element');
 
-```
+{% endhighlight %}
+{% endtabs %}
 
 ## Run the application
 
 * Run the application in the browser using the following command.
 
-```
+{% tabs %}
+{% highlight bash tabtitle="NPM" %}
+
 npm start
-```
+
+{% endhighlight %}
+{% endtabs %}
 
 {% tabs %}
 {% highlight ts tabtitle="index.ts" %}
